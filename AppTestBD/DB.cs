@@ -9,22 +9,22 @@ namespace AppTestBD
 {
     class DB
     {
-        
-        static void Connect()
+
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KSH314B\MSSQLSERVER1;Initial Catalog=""laboratory data"";Integrated Security=True;Encrypt=False");
+           
+        public void openConnection()
         {
-
-            string connectionString = @"Source = DESKTOP - KSH314B\MSSQLSERVER1; Initial Catalog = laboratory data; Integrated Security = True; Encrypt = False";
-       
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
+              if(connection.State == System.Data.ConnectionState.Closed) 
                 connection.Open();
-             
-                MessageBox.Show("SELECT * FROM Patients");
-            }
-            Console.WriteLine("Подключение закрыто...");
-
-            Console.Read();
         }
+
+        public void closeConnection()
+        {
+            if (connection.State == System.Data.ConnectionState.Open)
+                connection.Close();
+        }
+
+        public SqlConnection getConnection() { return connection; }
+
     }
 }
