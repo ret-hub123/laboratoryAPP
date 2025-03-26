@@ -36,13 +36,14 @@ namespace AppTestBD
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if(table.Rows.Count > 0)
-                MessageBox.Show("YES");
+            if (table.Rows.Count > 0)
+            {
+                this.Hide();
+                MainMenu mainForm = new MainMenu(table);
+                mainForm.Show();
+            }
             else
-                MessageBox.Show("NO");
-
-
-
+                MessageBox.Show("Полшьзователь не найден");
 
         }
 

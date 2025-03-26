@@ -70,9 +70,10 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(textLogin);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(-3, 92);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 90);
             panel1.Name = "panel1";
-            panel1.Size = new Size(348, 288);
+            panel1.Size = new Size(343, 288);
             panel1.TabIndex = 2;
             // 
             // pictureBox2
