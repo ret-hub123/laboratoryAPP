@@ -32,6 +32,7 @@
             labelFIO = new Label();
             labelRole = new Label();
             panel1 = new Panel();
+            exitControl1 = new ExitControl();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,10 +40,10 @@
             // 
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Comic Sans MS", 36F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 204);
-            label1.Location = new Point(33, 0);
+            label1.Font = new Font("Comic Sans MS", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.Location = new Point(73, 11);
             label1.Name = "label1";
-            label1.Size = new Size(372, 67);
+            label1.Size = new Size(288, 51);
             label1.TabIndex = 3;
             label1.Text = "Главное меню";
             // 
@@ -82,12 +83,20 @@
             panel1.Size = new Size(440, 403);
             panel1.TabIndex = 4;
             // 
+            // exitControl1
+            // 
+            exitControl1.Location = new Point(0, 1);
+            exitControl1.Name = "exitControl1";
+            exitControl1.Size = new Size(51, 51);
+            exitControl1.TabIndex = 5;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(84, 166, 136);
             ClientSize = new Size(440, 478);
+            Controls.Add(exitControl1);
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "MainMenu";
@@ -105,5 +114,6 @@
         private Panel panel1;
         private AccountantControl accountantControl1;
         private AccountantControl accountantControl2;
+        private ExitControl exitControl1;
     }
 }

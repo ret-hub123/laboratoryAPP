@@ -63,6 +63,16 @@ namespace AppTestBD.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap free_icon_exit_3483569 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-exit-3483569", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap free_icon_lock_8472244 {
             get {
                 object obj = ResourceManager.GetObject("free-icon-lock-8472244", resourceCulture);

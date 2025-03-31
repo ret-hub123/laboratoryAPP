@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
             textSearch = new TextBox();
             button1 = new Button();
             label1 = new Label();
-            label2 = new Label();
-            dataGridView1 = new DataGridView();
+            exitControl1 = new ExitControl();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -51,6 +52,27 @@
             panel1.RightToLeft = RightToLeft.No;
             panel1.Size = new Size(440, 455);
             panel1.TabIndex = 9;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 140);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(416, 150);
+            dataGridView1.TabIndex = 16;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label2.Location = new Point(59, 17);
+            label2.Name = "label2";
+            label2.RightToLeft = RightToLeft.No;
+            label2.Size = new Size(315, 60);
+            label2.TabIndex = 11;
+            label2.Text = "Введите индефикатор отчета\r\n или ID сотрудника ";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textSearch
             // 
@@ -84,26 +106,12 @@
             label1.Text = "Просмотр отчетов";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // exitControl1
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(59, 17);
-            label2.Name = "label2";
-            label2.RightToLeft = RightToLeft.No;
-            label2.Size = new Size(315, 60);
-            label2.TabIndex = 11;
-            label2.Text = "Введите индефикатор отчета\r\n или ID сотрудника ";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 140);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(416, 150);
-            dataGridView1.TabIndex = 16;
+            exitControl1.Location = new Point(0, 1);
+            exitControl1.Name = "exitControl1";
+            exitControl1.Size = new Size(51, 51);
+            exitControl1.TabIndex = 11;
             // 
             // ShowReports
             // 
@@ -111,6 +119,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(84, 166, 136);
             ClientSize = new Size(440, 530);
+            Controls.Add(exitControl1);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "ShowReports";
@@ -130,5 +139,6 @@
         private Label label1;
         private Label label2;
         private DataGridView dataGridView1;
+        private ExitControl exitControl1;
     }
 }

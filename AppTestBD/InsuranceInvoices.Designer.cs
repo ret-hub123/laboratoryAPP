@@ -37,6 +37,7 @@
             textDescript = new RichTextBox();
             button1 = new Button();
             label1 = new Label();
+            exitControl1 = new ExitControl();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -141,12 +142,20 @@
             label1.Text = "Создание счёта\r\n страховой компании\r\n";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // exitControl1
+            // 
+            exitControl1.Location = new Point(0, -1);
+            exitControl1.Name = "exitControl1";
+            exitControl1.Size = new Size(51, 51);
+            exitControl1.TabIndex = 7;
+            // 
             // InsuranceInvoices
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(84, 166, 136);
             ClientSize = new Size(440, 521);
+            Controls.Add(exitControl1);
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "InsuranceInvoices";
@@ -168,5 +177,6 @@
         private Label labelFIO;
         private RichTextBox textDescript;
         private Button button1;
+        private ExitControl exitControl1;
     }
 }

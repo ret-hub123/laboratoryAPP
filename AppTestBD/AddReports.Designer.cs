@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            textService = new TextBox();
+            label2 = new Label();
             textType = new TextBox();
             label3 = new Label();
             labelFIO = new Label();
             textDescript = new RichTextBox();
             button1 = new Button();
             label1 = new Label();
-            textService = new TextBox();
-            label2 = new Label();
+            exitControl1 = new ExitControl();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,6 +57,26 @@
             panel1.RightToLeft = RightToLeft.No;
             panel1.Size = new Size(440, 437);
             panel1.TabIndex = 9;
+            // 
+            // textService
+            // 
+            textService.Location = new Point(27, 127);
+            textService.Multiline = true;
+            textService.Name = "textService";
+            textService.Size = new Size(386, 31);
+            textService.TabIndex = 17;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            label2.Location = new Point(27, 94);
+            label2.Name = "label2";
+            label2.Size = new Size(200, 30);
+            label2.TabIndex = 16;
+            label2.Text = "Оказанная услуга";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textType
             // 
@@ -121,25 +142,12 @@
             label1.Text = "Добавление отчета \r\nпо оказанным услугам\r\n";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textService
+            // exitControl1
             // 
-            textService.Location = new Point(27, 127);
-            textService.Multiline = true;
-            textService.Name = "textService";
-            textService.Size = new Size(386, 31);
-            textService.TabIndex = 17;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            label2.Location = new Point(27, 94);
-            label2.Name = "label2";
-            label2.Size = new Size(200, 30);
-            label2.TabIndex = 16;
-            label2.Text = "Оказанная услуга";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            exitControl1.Location = new Point(0, -1);
+            exitControl1.Name = "exitControl1";
+            exitControl1.Size = new Size(51, 51);
+            exitControl1.TabIndex = 11;
             // 
             // AddReports
             // 
@@ -147,6 +155,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(84, 166, 136);
             ClientSize = new Size(440, 521);
+            Controls.Add(exitControl1);
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "AddReports";
@@ -168,5 +177,6 @@
         private Label label1;
         private TextBox textService;
         private Label label2;
+        private ExitControl exitControl1;
     }
 }
