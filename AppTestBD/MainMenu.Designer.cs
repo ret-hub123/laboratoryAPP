@@ -40,7 +40,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Comic Sans MS", 36F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 204);
-            label1.Location = new Point(33, 9);
+            label1.Location = new Point(33, 0);
             label1.Name = "label1";
             label1.Size = new Size(372, 67);
             label1.TabIndex = 3;
@@ -51,7 +51,7 @@
             labelFIO.Anchor = AnchorStyles.None;
             labelFIO.AutoSize = true;
             labelFIO.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            labelFIO.Location = new Point(84, 37);
+            labelFIO.Location = new Point(84, 44);
             labelFIO.Name = "labelFIO";
             labelFIO.Size = new Size(59, 30);
             labelFIO.TabIndex = 3;
@@ -63,7 +63,7 @@
             labelRole.Anchor = AnchorStyles.None;
             labelRole.AutoSize = true;
             labelRole.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            labelRole.Location = new Point(84, 77);
+            labelRole.Location = new Point(84, 84);
             labelRole.Name = "labelRole";
             labelRole.Size = new Size(60, 30);
             labelRole.TabIndex = 4;
@@ -76,10 +76,10 @@
             panel1.Controls.Add(labelRole);
             panel1.Controls.Add(labelFIO);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 89);
+            panel1.Location = new Point(0, 75);
             panel1.Name = "panel1";
             panel1.RightToLeft = RightToLeft.No;
-            panel1.Size = new Size(440, 389);
+            panel1.Size = new Size(440, 403);
             panel1.TabIndex = 4;
             // 
             // MainMenu

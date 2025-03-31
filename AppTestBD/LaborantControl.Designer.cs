@@ -38,12 +38,13 @@
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             button2.AutoSize = true;
-            button2.Location = new Point(95, 106);
+            button2.Location = new Point(94, 106);
             button2.Name = "button2";
             button2.Size = new Size(250, 46);
             button2.TabIndex = 12;
             button2.Text = "Принять биоматериал";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -55,6 +56,7 @@
             button1.TabIndex = 11;
             button1.Text = "Сформаровать отчет";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
