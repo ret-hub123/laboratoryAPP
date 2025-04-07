@@ -7,8 +7,10 @@ using Microsoft.Data.SqlClient;
 
 namespace AppTestBD
 {
+    
     class DB
     {
+        
 
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KSH314B\MSSQLSERVER1;Initial Catalog=""laboratory data"";Integrated Security=True;Encrypt=False");
            

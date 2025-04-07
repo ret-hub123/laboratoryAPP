@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button3 = new Button();
+            label5 = new Label();
+            textBox1 = new TextBox();
+            button2 = new Button();
+            label4 = new Label();
+            label2 = new Label();
             textPatient = new TextBox();
             label3 = new Label();
-            label2 = new Label();
-            textType = new TextBox();
-            labelFIO = new Label();
-            textDescript = new RichTextBox();
             button1 = new Button();
             label1 = new Label();
             exitControl1 = new ExitControl();
@@ -44,12 +46,14 @@
             // panel1
             // 
             panel1.BackColor = Color.Green;
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(textPatient);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(textType);
-            panel1.Controls.Add(labelFIO);
-            panel1.Controls.Add(textDescript);
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Bottom;
             panel1.Location = new Point(0, 84);
@@ -58,9 +62,74 @@
             panel1.Size = new Size(440, 437);
             panel1.TabIndex = 7;
             // 
+            // button3
+            // 
+            button3.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button3.Location = new Point(21, 274);
+            button3.Name = "button3";
+            button3.Size = new Size(386, 62);
+            button3.TabIndex = 21;
+            button3.Text = "Добавить услугу к заказу";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.None;
+            label5.AutoSize = true;
+            label5.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            label5.Location = new Point(25, 190);
+            label5.Name = "label5";
+            label5.Size = new Size(267, 30);
+            label5.TabIndex = 20;
+            label5.Text = "Введите ФИО пациента:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(21, 76);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(386, 31);
+            textBox1.TabIndex = 19;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Comic Sans MS", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            button2.Location = new Point(154, 143);
+            button2.Name = "button2";
+            button2.Size = new Size(138, 34);
+            button2.TabIndex = 18;
+            button2.Text = "Сканировать";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            label4.Location = new Point(188, 110);
+            label4.Name = "label4";
+            label4.Size = new Size(61, 30);
+            label4.TabIndex = 17;
+            label4.Text = "ИЛИ";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
+            label2.Location = new Point(21, 43);
+            label2.Name = "label2";
+            label2.Size = new Size(202, 30);
+            label2.TabIndex = 16;
+            label2.Text = "Введите вручную:";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // textPatient
             // 
-            textPatient.Location = new Point(27, 44);
+            textPatient.Location = new Point(23, 223);
             textPatient.Multiline = true;
             textPatient.Name = "textPatient";
             textPatient.Size = new Size(386, 31);
@@ -71,52 +140,12 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            label3.Location = new Point(27, 11);
+            label3.Location = new Point(149, 13);
             label3.Name = "label3";
-            label3.Size = new Size(113, 30);
+            label3.Size = new Size(154, 30);
             label3.TabIndex = 14;
-            label3.Text = "Пациент:";
+            label3.Text = "Код пробирки";
             label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            label2.Location = new Point(27, 86);
-            label2.Name = "label2";
-            label2.Size = new Size(211, 30);
-            label2.TabIndex = 13;
-            label2.Text = "Тип биоматериала";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // textType
-            // 
-            textType.Location = new Point(27, 119);
-            textType.Multiline = true;
-            textType.Name = "textType";
-            textType.Size = new Size(386, 31);
-            textType.TabIndex = 12;
-            // 
-            // labelFIO
-            // 
-            labelFIO.Anchor = AnchorStyles.None;
-            labelFIO.AutoSize = true;
-            labelFIO.Font = new Font("Comic Sans MS", 15.75F, FontStyle.Bold);
-            labelFIO.Location = new Point(27, 165);
-            labelFIO.Name = "labelFIO";
-            labelFIO.Size = new Size(126, 30);
-            labelFIO.TabIndex = 11;
-            labelFIO.Text = "Описание:";
-            labelFIO.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // textDescript
-            // 
-            textDescript.Location = new Point(27, 198);
-            textDescript.Name = "textDescript";
-            textDescript.Size = new Size(386, 144);
-            textDescript.TabIndex = 10;
-            textDescript.Text = "";
             // 
             // button1
             // 
@@ -159,7 +188,6 @@
             Controls.Add(panel1);
             Controls.Add(label1);
             Name = "AddBiomaterial";
-            Text = "AddBiomaterial";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -171,12 +199,14 @@
         private Panel panel1;
         private TextBox textPatient;
         private Label label3;
-        private Label label2;
-        private TextBox textType;
-        private Label labelFIO;
-        private RichTextBox textDescript;
         private Button button1;
         private Label label1;
         private ExitControl exitControl1;
+        private Label label4;
+        private Label label2;
+        private Label label5;
+        private TextBox textBox1;
+        private Button button2;
+        private Button button3;
     }
 }
