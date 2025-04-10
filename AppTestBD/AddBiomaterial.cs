@@ -9,6 +9,8 @@ using Microsoft.Identity.Client;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Transactions;
+using static System.Net.Mime.MediaTypeNames;
+using System.Data.Common;
 
 namespace AppTestBD
 {
@@ -38,13 +40,13 @@ namespace AppTestBD
             _placeholderText = last_order_id + 1;
 
 
-            textBox1.Text = Convert.ToString(_placeholderText);
-            textBox1.ForeColor = System.Drawing.Color.Gray;
+            textBiomaterial.Text = Convert.ToString(_placeholderText);
+            textBiomaterial.ForeColor = System.Drawing.Color.Gray;
 
             // Подписываемся на события
-            textBox1.GotFocus += textBox1_GotFocus;
-            textBox1.LostFocus += textBox1_LostFocus;
-            textBox1.KeyDown += textBox1_KeyDown;
+            textBiomaterial.GotFocus += textBox1_GotFocus;
+            textBiomaterial.LostFocus += textBox1_LostFocus;
+            textBiomaterial.KeyDown += textBox1_KeyDown;
 
             _currentOrderId = CreateOrder();
         }
@@ -55,18 +57,18 @@ namespace AppTestBD
         {
             if (_placeholderShown)
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = System.Drawing.Color.Black;
+                textBiomaterial.Text = "";
+                textBiomaterial.ForeColor = System.Drawing.Color.Black;
                 _placeholderShown = false;
             }
         }
 
         private void textBox1_LostFocus(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            if (string.IsNullOrWhiteSpace(textBiomaterial.Text))
             {
-                textBox1.Text = Convert.ToString(_placeholderText);
-                textBox1.ForeColor = System.Drawing.Color.Gray;
+                textBiomaterial.Text = Convert.ToString(_placeholderText);
+                textBiomaterial.ForeColor = System.Drawing.Color.Gray;
                 _placeholderShown = true;
             }
         }
@@ -79,10 +81,10 @@ namespace AppTestBD
 
            
 
-                textBox1.Text = Convert.ToString(_placeholderText);
-                textBox1.ForeColor = System.Drawing.Color.Black;
+                textBiomaterial.Text = Convert.ToString(_placeholderText);
+                textBiomaterial.ForeColor = System.Drawing.Color.Black;
                 _placeholderShown = false; // mark placeholder as no longer shown
-                textBox1.SelectionStart = textBox1.Text.Length; // Move caret to end
+                textBiomaterial.SelectionStart = textBiomaterial.Text.Length; // Move caret to end
 
 
 
@@ -103,6 +105,8 @@ namespace AppTestBD
             _db.openConnection();
 
             SqlTransaction transaction = connection.BeginTransaction();
+
+
 
             try
             {
@@ -144,6 +148,59 @@ namespace AppTestBD
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string TextPatient = textPatient.Text;
+            string TextBiomaterial = textBiomaterial.Text;
+            string patint;
+
+            if (string.IsNullOrEmpty(TextPatient) || string.IsNullOrEmpty(TextBiomaterial))
+            {
+                MessageBox.Show("Добавьте ID пользователя и услуги к заказу", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
+
+            SqlConnection connection = _db.getConnection();
+            SqlCommand command_find_patint = new SqlCommand("SELECT patient_id FROM [Patients] WHERE patient_id = @patient_id", _db.getConnection());
+
+            command_find_patint.Parameters.Add("@patient_id", SqlDbType.VarChar).Value = TextPatient;
+
+            _db.openConnection();
+
+            patint = Convert.ToString(command_find_patint.ExecuteScalar());
+            
+
+            if ( string.IsNullOrEmpty(patint))
+            {
+
+                MessageBox.Show("Такого пользователя не существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                AddPatient addpat = new AddPatient();
+                this.Hide();
+                addpat.Show();
+
+
+            }
+            else 
+            {
+
+                SqlCommand command_generate_order = new SqlCommand("UPDATE [Order] SET patient_id = @patient_id, biomaterials_id = @biomaterials_id   WHERE @currentOrder = order_id;", _db.getConnection());
+
+                command_generate_order.Parameters.Add("@patient_id", SqlDbType.VarChar).Value = patint;
+                command_generate_order.Parameters.Add("@biomaterials_id", SqlDbType.VarChar).Value = TextBiomaterial;
+                command_generate_order.Parameters.Add("@currentOrder", SqlDbType.Int).Value = _currentOrderId;
+
+                try
+                {
+                    _db.openConnection();
+                    command_generate_order.ExecuteNonQuery();
+                    MessageBox.Show("Заказ сформирован", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка при добавлении данных: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
+            }
 
         }
     }

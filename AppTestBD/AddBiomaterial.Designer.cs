@@ -31,7 +31,7 @@
             panel1 = new Panel();
             button3 = new Button();
             label5 = new Label();
-            textBox1 = new TextBox();
+            textBiomaterial = new TextBox();
             button2 = new Button();
             label4 = new Label();
             label2 = new Label();
@@ -48,7 +48,7 @@
             panel1.BackColor = Color.Green;
             panel1.Controls.Add(button3);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(textBiomaterial);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label2);
@@ -85,13 +85,13 @@
             label5.Text = "Введите ФИО пациента:";
             label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBiomaterial
             // 
-            textBox1.Location = new Point(21, 76);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(386, 31);
-            textBox1.TabIndex = 19;
+            textBiomaterial.Location = new Point(21, 76);
+            textBiomaterial.Multiline = true;
+            textBiomaterial.Name = "textBiomaterial";
+            textBiomaterial.Size = new Size(386, 31);
+            textBiomaterial.TabIndex = 19;
             // 
             // button2
             // 
@@ -205,7 +205,7 @@
         private Label label4;
         private Label label2;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox textBiomaterial;
         private Button button2;
         private Button button3;
     }
