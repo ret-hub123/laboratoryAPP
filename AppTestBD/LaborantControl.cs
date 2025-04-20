@@ -42,12 +42,12 @@ namespace AppTestBD
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             string laborantId = Convert.ToString(dataGridView1.Rows[0].Cells[0].Value);
             this.FindForm().Hide();
 
-            AddReports addboreports = new AddReports(laborantId);
-            addboreports.Show();
-
+            DecideReport decidereport = new DecideReport(laborantId);
+            decidereport.Show();
         }
     }
 }

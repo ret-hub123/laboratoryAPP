@@ -193,6 +193,7 @@ namespace AppTestBD
                     _db.openConnection();
                     command_generate_order.ExecuteNonQuery();
                     MessageBox.Show("Заказ сформирован", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.FindForm().Hide();
 
                 }
                 catch (Exception ex)
